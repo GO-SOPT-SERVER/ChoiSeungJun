@@ -10,14 +10,14 @@ import java.util.ArrayList;
 @SpringBootApplication
 public class SecondSeminarApplication {
 
-	public static ArrayList<User> userList;
-	public static ArrayList<Post> postList;
+    public static ArrayList<User> userList;
+    public static ArrayList<Post> postList;
 
-	public static void main(String[] args) {
-		SpringApplication.run(SecondSeminarApplication.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(SecondSeminarApplication.class, args);
 
-		userList = new ArrayList<>();
-		postList = new ArrayList<>();
-	}
+        userList = new ArrayList<>();
+        postList = new ArrayList<>();
+    }
 
 }

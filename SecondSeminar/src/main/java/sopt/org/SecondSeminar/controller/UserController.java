@@ -1,6 +1,5 @@
 package sopt.org.SecondSeminar.controller;
 
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import sopt.org.SecondSeminar.domain.UserRequestDto;

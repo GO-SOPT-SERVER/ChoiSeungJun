@@ -19,7 +19,7 @@ public class PostResponseDto {
     public String toString() {
         return
                 "title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", author='" + author + '\'';
+                        ", content='" + content + '\'' +
+                        ", author='" + author + '\'';
     }
 }
