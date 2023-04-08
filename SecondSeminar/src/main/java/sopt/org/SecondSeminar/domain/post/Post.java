@@ -1,6 +1,7 @@
 package sopt.org.SecondSeminar.domain.post;
 
 
+import lombok.Builder;
 import lombok.Getter;
 
 @Getter
@@ -11,7 +12,7 @@ public class Post {
     private String content;
     private String author;
 
-
+    @Builder
     public Post(String title, String content, String author) {
         this.title = title;
         this.content = content;

@@ -12,25 +12,27 @@ import static sopt.org.SecondSeminar.SecondSeminarApplication.postList;
 public class PostService {
 
     public Long save(PostRequestDto requestDto) {
-        Post post = new Post(
-                requestDto.getTitle(),
-                requestDto.getContent(),
-                requestDto.getAuthor());
+        Post post = Post.builder()
+                .title(requestDto.getTitle())
+                .content(requestDto.getContent())
+                .author(requestDto.getAuthor())
+                .build();
 
         postList.add(post);
-
         post.setPostId((long) postList.size());
+
         return post.getPostId();
     }
 
     public PostResponseDto findById(Long postId) {
         Post post = postList.get(postId.intValue() - 1);
 
-        PostResponseDto responseDto = new PostResponseDto(
-                post.getPostId(),
-                post.getTitle(),
-                post.getContent(),
-                post.getAuthor());
+        PostResponseDto responseDto = PostResponseDto.builder()
+                .postId(post.getPostId())
+                .title(post.getTitle())
+                .content(post.getContent())
+                .author(post.getAuthor())
+                .build();
 
         return responseDto;
     }
