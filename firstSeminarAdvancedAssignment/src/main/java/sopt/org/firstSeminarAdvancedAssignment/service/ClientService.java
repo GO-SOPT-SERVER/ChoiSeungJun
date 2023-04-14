@@ -10,4 +10,9 @@ public class ClientService {
         Client client = new Client(accountNumber, name, birth, tel, address, password);
         clientRepository.register(client);
     }
+
+    public int checkAccountBalance(String accountNumber, String password) {
+        return clientRepository.getAccountBalance(accountNumber, password);
+
+    }
 }

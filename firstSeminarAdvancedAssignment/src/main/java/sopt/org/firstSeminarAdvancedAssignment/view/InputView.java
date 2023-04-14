@@ -6,33 +6,43 @@ public class InputView {
     private Scanner sc = new Scanner(System.in);
     private final OutputView outputView = new OutputView();
 
-    public String inputAccountNumber() {
-        outputView.inputAccountNumberForRegisterMessage();
+    public String inputAccountNumberForClientRegister() {
+        outputView.printInputAccountNumberForRegisterMessage();
         return inputString();
     }
 
     public String inputClientName() {
-        outputView.inputClientNameForRegisterMessage();
+        outputView.printInputClientNameMessage();
+        return inputString();
+    }
+
+    public String inputPasswordForClientRegister() {
+        outputView.printInputPasswordForRegisterMessage();
+        return inputString();
+    }
+
+    public String inputBirthForClientRegister() {
+        outputView.printInputBirthForRegisterMessage();
+        return inputString();
+    }
+
+    public String inputTelForClientRegister() {
+        outputView.printInputTelNumberForRegisterMessage();
+        return inputString();
+    }
+
+    public String inputAddressForClientRegister() {
+        outputView.printInputAddressForRegisterMessage();
         return inputString();
     }
 
     public String inputPassword() {
-        outputView.inputPasswordForRegisterMessage();
+        outputView.printInputPasswordMessage();
         return inputString();
     }
 
-    public String inputBirth() {
-        outputView.inputBirthForRegisterMessage();
-        return inputString();
-    }
-
-    public String inputTel() {
-        outputView.inputTelNumberForRegisterMessage();
-        return inputString();
-    }
-
-    public String inputAddress() {
-        outputView.inputAddressForRegisterMessage();
+    public String inputAccountNumber() {
+        outputView.printInputAccountNumberMessage();
         return inputString();
     }
 
