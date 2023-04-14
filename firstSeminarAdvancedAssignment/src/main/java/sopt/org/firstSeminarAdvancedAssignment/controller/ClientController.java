@@ -11,8 +11,15 @@ public class ClientController {
 
 
     public void registerClient() {
-        outputView.inputClientInfoMessage();
-        clientService.registerClient(inputView.inputAccountNumber(), inputView.inputClientName(), inputView.inputBirth(), inputView.inputTel(), inputView.inputAddress(), inputView.inputPassword());
+        outputView.printInputClientInfoMessage();
+        clientService.registerClient(inputView.inputAccountNumberForClientRegister(), inputView.inputClientName(), inputView.inputBirthForClientRegister(), inputView.inputTelForClientRegister(), inputView.inputAddressForClientRegister(), inputView.inputPasswordForClientRegister());
+    }
+
+    public void getClientAccountBalance() {
+        outputView.printCheckAccountBalanceMessage();
+        int clientAmountBalance = clientService.checkAccountBalance(inputView.inputAccountNumber(), inputView.inputPassword());
+
+        outputView.printClientAmountBalance(clientAmountBalance);
     }
 
 }
