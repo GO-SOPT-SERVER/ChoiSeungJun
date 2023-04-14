@@ -22,4 +22,11 @@ public class ClientController {
         outputView.printClientAmountBalance(clientAmountBalance);
     }
 
+    public void withdrawAccountBalance() {
+        outputView.printWithdrawAccountBalanceMessage();
+
+        int remainAmount = clientService.withdrawFromClientAccount(inputView.inputAccountNumber(), inputView.inputPassword(), inputView.inputWithdrawAccount());
+        outputView.printRemainAmountAfterWithdrawMessage(remainAmount);
+    }
+
 }

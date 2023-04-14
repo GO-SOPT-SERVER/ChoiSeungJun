@@ -46,4 +46,11 @@ public class ClientRepository {
 
         return clientMoneyAmount;
     }
+
+    public int withdrawAccountBalance(String accountNumber, int amount) {
+        Client client = clientDB.get(accountNumber);
+        int remainAmount = client.withdraw(amount);
+
+        return remainAmount;
+    }
 }

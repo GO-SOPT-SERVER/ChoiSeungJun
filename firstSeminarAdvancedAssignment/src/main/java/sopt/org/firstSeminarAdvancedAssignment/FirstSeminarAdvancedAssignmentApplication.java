@@ -12,6 +12,7 @@ public class FirstSeminarAdvancedAssignmentApplication {
         SpringApplication.run(FirstSeminarAdvancedAssignmentApplication.class, args);
         clientController.registerClient();
         clientController.getClientAccountBalance();
+        clientController.withdrawAccountBalance();
     }
 
 }

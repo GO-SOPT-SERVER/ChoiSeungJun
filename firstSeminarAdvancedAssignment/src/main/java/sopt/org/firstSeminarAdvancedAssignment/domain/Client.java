@@ -61,4 +61,9 @@ public class Client {
             throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE);
         }
     }
+
+    public int withdraw(int withdrawAmount) {
+        this.amount -= withdrawAmount;
+        return this.amount;
+    }
 }

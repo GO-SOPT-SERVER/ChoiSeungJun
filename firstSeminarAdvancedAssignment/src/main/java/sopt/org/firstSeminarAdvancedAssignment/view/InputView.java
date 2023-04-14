@@ -46,8 +46,17 @@ public class InputView {
         return inputString();
     }
 
+    public int inputWithdrawAccount() {
+        outputView.printWithdrawAmountMessage();
+        return inputInt();
+    }
+
 
     private String inputString() {
         return sc.nextLine();
+    }
+
+    private Integer inputInt() {
+        return sc.nextInt();
     }
 }
