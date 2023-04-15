@@ -34,7 +34,12 @@ public class ClientController {
 
         int nowAmount = clientService.depositIntoAccount(inputView.inputAccountNumber(), inputView.inputDepositMoney());
         outputView.printAmountAfterDeposit(nowAmount);
+    }
 
+    public void transferMoneyToAnotherAccount() {
+
+        int remainAmount = clientService.transferMoney(inputView.inputAccountNumber(), inputView.inputPassword(), inputView.inputAnotherAccountNumber(), inputView.inputTransferMoneyAmount());
+        outputView.printRemainAmountAfterTransferMessage(remainAmount);
 
     }
 

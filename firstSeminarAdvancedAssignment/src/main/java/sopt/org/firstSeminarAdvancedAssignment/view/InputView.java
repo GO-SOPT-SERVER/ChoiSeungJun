@@ -52,7 +52,17 @@ public class InputView {
     }
 
     public int inputDepositMoney() {
-        outputView.printDepositAmountMessage();
+        outputView.printDepositMoneyAmountMessage();
+        return inputInt();
+    }
+
+    public String inputAnotherAccountNumber() {
+        outputView.printAnotherAccountToTransferMoneyMessage();
+        return inputString();
+    }
+
+    public int inputTransferMoneyAmount() {
+        outputView.printTransferAmountMessage();
         return inputInt();
     }
 

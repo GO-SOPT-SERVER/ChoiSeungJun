@@ -56,13 +56,28 @@ public class OutputView {
         System.out.println("입금을 위해 계좌번호를 입력해주세요.");
     }
 
-    public void printDepositAmountMessage() {
+    public void printDepositMoneyAmountMessage() {
         System.out.println("입금하실 금액을 입력해주세요.");
     }
 
     public void printAmountAfterDeposit(int amount) {
         System.out.println("입금 후 계좌 내 금액은 " + amount + "원 입니다.");
     }
+
+    //송금 메세지
+    public void printAnotherAccountToTransferMoneyMessage() {
+        System.out.println("돈을 송금할 계좌번호를 입력해주세요.");
+    }
+
+    public void printTransferAmountMessage() {
+        System.out.println("송금하실 금액을 입력해주세요.");
+    }
+
+    public void printRemainAmountAfterTransferMessage(int amount) {
+        System.out.println("송금이 완료되었습니다.");
+        System.out.println("송금 후 잔액은 " + amount + "원 입니다.");
+    }
+
 
     //기본 메세지
     public void printInputClientNameMessage() {

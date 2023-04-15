@@ -43,6 +43,22 @@ public class ClientRepository {
         return amountAfterDeposit;
     }
 
+    public int transfer(String accountNumber, String password, String anotherAccountNumber, int transferAmount) {
+        validateIsExistAccountNumber(accountNumber);
+        Client fromClient = clientDB.get(accountNumber);
+        validateClientPassword(password, fromClient); //Client 도메인 측으로 넘겨야하는 검증 기능
+        
+        fromClient.checkAccountBalanceToTransfer(transferAmount);
+        int remainAmount = fromClient.withdraw(transferAmount);
+
+        validateIsExistAccountNumber(anotherAccountNumber);
+        Client toClient = clientDB.get(anotherAccountNumber);
+        
+        toClient.deposit(transferAmount);
+
+        return remainAmount;
+    }
+
 
     private void validateIsExistAccountNumber(String clientAccountNumber) {
         boolean isAccountExist = false;

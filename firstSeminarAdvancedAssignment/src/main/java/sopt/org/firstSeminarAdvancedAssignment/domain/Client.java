@@ -1,6 +1,7 @@
 package sopt.org.firstSeminarAdvancedAssignment.domain;
 
 import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE;
 
 public class Client {
 
@@ -59,6 +60,12 @@ public class Client {
     private void checkAccountNumberLength(String[] seperatedAccountNumber) {
         if (seperatedAccountNumber.length != 3) {
             throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE);
+        }
+    }
+
+    public void checkAccountBalanceToTransfer(int transferAmount) {
+        if (this.amount < transferAmount) {
+            throw new IllegalArgumentException(WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE);
         }
     }
 
