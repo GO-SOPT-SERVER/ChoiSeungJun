@@ -10,47 +10,27 @@ import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.*;
 public class ClientRepository {
     private static final Map<String, Client> clientDB = new LinkedHashMap<>();
 
-    public void register(Client client) {
-        boolean isDuplicated = false;
+    public void register(Client registerClient) {
+        String accountNumber = registerClient.getAccountNumber();
+        validateIsDuplicatedAccountNumber(accountNumber);
 
-        for (String accountNumber : clientDB.keySet()) {
-            if (client.getAccountNumber().equals(accountNumber)) {
-                isDuplicated = true;
-                break;
-            }
-        }
-
-        if (isDuplicated) {
-            throw new IllegalArgumentException(ACCOUNT_NUMBER_DUPLICATED_ERROR_MESSAGE);
-        }
-
-        clientDB.put(client.getAccountNumber(), client);
+        clientDB.put(accountNumber, registerClient);
     }
 
     public int getAccountBalance(String clientAccountNumber, String password) {
-        int clientMoneyAmount = -1;
+        validateIsExistAccountNumber(clientAccountNumber);
 
-        for (String accountNumber : clientDB.keySet()) {
-            if (accountNumber.equals(clientAccountNumber)) {
-                Client clientInfo = clientDB.get(clientAccountNumber);
+        Client client = clientDB.get(clientAccountNumber);
+        validateClientPassword(password, client);
 
-                if (clientInfo.checkPassword(password)) {
-                    clientMoneyAmount = clientInfo.getAmount();
-                    break;
-                } else {
-                    throw new IllegalArgumentException(WRONG_PASSWORD_ERROR_MESSAGE);
-                }
-            }
-        }
-        if (clientMoneyAmount == -1) throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_ERROR_MESSAGE);
-
-        return clientMoneyAmount;
+        int amount = client.getAmount();
+        return amount;
     }
 
     public int withdrawAccountBalance(String accountNumber, int amount) {
         Client client = clientDB.get(accountNumber);
-        int remainAmount = client.withdraw(amount);
 
+        int remainAmount = client.withdraw(amount);
         return remainAmount;
     }
 
@@ -58,10 +38,11 @@ public class ClientRepository {
         validateIsExistAccountNumber(accountNumber);
 
         Client client = clientDB.get(accountNumber);
-        int amountAfterDeposit = client.deposit(depositAmount);
 
+        int amountAfterDeposit = client.deposit(depositAmount);
         return amountAfterDeposit;
     }
+
 
     private void validateIsExistAccountNumber(String clientAccountNumber) {
         boolean isAccountExist = false;
@@ -71,9 +52,22 @@ public class ClientRepository {
                 break;
             }
         }
-
-        if(!isAccountExist) {
+        if (!isAccountExist) {
             throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_ERROR_MESSAGE);
+        }
+    }
+
+    private void validateIsDuplicatedAccountNumber(String clientAccountNumber) {
+        for (String accountNumber : clientDB.keySet()) {
+            if (accountNumber.equals(clientAccountNumber)) {
+                throw new IllegalArgumentException(ACCOUNT_NUMBER_DUPLICATED_ERROR_MESSAGE);
+            }
+        }
+    }
+
+    private void validateClientPassword(String password, Client client) {
+        if (!client.checkPassword(password)) {
+            throw new IllegalArgumentException(WRONG_PASSWORD_ERROR_MESSAGE);
         }
     }
 }
