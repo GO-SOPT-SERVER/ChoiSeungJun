@@ -51,6 +51,11 @@ public class InputView {
         return inputInt();
     }
 
+    public int inputDepositMoney() {
+        outputView.printDepositAmountMessage();
+        return inputInt();
+    }
+
 
     private String inputString() {
         return sc.nextLine();

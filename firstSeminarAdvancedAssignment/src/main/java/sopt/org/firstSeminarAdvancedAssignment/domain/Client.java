@@ -66,4 +66,9 @@ public class Client {
         this.amount -= withdrawAmount;
         return this.amount;
     }
+
+    public int deposit(int amount) {
+        this.amount += amount;
+        return this.amount;
+    }
 }

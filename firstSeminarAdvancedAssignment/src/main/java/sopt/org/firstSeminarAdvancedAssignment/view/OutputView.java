@@ -51,6 +51,19 @@ public class OutputView {
         System.out.println("출금 후 잔액은 " + amount + "원 입니다.");
     }
 
+    //입금 메세지
+    public final void printDepositIntoAccountMessage() {
+        System.out.println("입금을 위해 계좌번호를 입력해주세요.");
+    }
+
+    public void printDepositAmountMessage() {
+        System.out.println("입금하실 금액을 입력해주세요.");
+    }
+
+    public void printAmountAfterDeposit(int amount) {
+        System.out.println("입금 후 계좌 내 금액은 " + amount + "원 입니다.");
+    }
+
     //기본 메세지
     public final void printInputClientNameMessage() {
         System.out.println("이름을 입력해주세요.");

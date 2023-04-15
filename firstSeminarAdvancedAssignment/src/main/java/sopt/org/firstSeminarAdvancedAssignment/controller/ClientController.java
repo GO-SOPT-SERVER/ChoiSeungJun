@@ -29,4 +29,15 @@ public class ClientController {
         outputView.printRemainAmountAfterWithdrawMessage(remainAmount);
     }
 
+    public void depositMoneyIntoAccount() {
+        outputView.printDepositIntoAccountMessage();
+
+        int nowAmount = clientService.depositIntoAccount(inputView.inputAccountNumber(), inputView.inputDepositMoney());
+        outputView.printAmountAfterDeposit(nowAmount);
+
+
+    }
+
+
+
 }

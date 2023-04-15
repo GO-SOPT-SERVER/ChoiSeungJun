@@ -27,12 +27,12 @@ public class ClientRepository {
         clientDB.put(client.getAccountNumber(), client);
     }
 
-    public int getAccountBalance(String clientAcountNumber, String password) {
+    public int getAccountBalance(String clientAccountNumber, String password) {
         int clientMoneyAmount = -1;
 
         for (String accountNumber : clientDB.keySet()) {
-            if (accountNumber.equals(clientAcountNumber)) {
-                Client clientInfo = clientDB.get(clientAcountNumber);
+            if (accountNumber.equals(clientAccountNumber)) {
+                Client clientInfo = clientDB.get(clientAccountNumber);
 
                 if (clientInfo.checkPassword(password)) {
                     clientMoneyAmount = clientInfo.getAmount();
@@ -52,5 +52,28 @@ public class ClientRepository {
         int remainAmount = client.withdraw(amount);
 
         return remainAmount;
+    }
+
+    public int deposit(String accountNumber, int depositAmount) {
+        validateIsExistAccountNumber(accountNumber);
+
+        Client client = clientDB.get(accountNumber);
+        int amountAfterDeposit = client.deposit(depositAmount);
+
+        return amountAfterDeposit;
+    }
+
+    private void validateIsExistAccountNumber(String clientAccountNumber) {
+        boolean isAccountExist = false;
+        for (String accountNumber : clientDB.keySet()) {
+            if (accountNumber.equals(clientAccountNumber)) {
+                isAccountExist = true;
+                break;
+            }
+        }
+
+        if(!isAccountExist) {
+            throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_ERROR_MESSAGE);
+        }
     }
 }

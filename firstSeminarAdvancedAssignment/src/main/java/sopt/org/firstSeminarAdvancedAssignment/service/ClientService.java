@@ -26,6 +26,12 @@ public class ClientService {
         return remainAmount;
     }
 
+    public int depositIntoAccount(String accountNumber, int depositAmount) {
+        int amountAfterDeposit = clientRepository.deposit(accountNumber, depositAmount);
+
+        return amountAfterDeposit;
+    }
+
     private void validateAccountBalanceAmount(int amount, int accountBalance) {
         if(accountBalance < amount) {
             throw new IllegalArgumentException(WRONG_ACCOUNT_BALANCE_AMOUNT_ERROR_MESSAGE);
