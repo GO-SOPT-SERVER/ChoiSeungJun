@@ -4,7 +4,7 @@ public class OutputMessage {
 
     public final static String REGISTER_CLIENT_MESSAGE = "고객 등록을 위하여, 정보를 입력해주세요.";
     public final static String INPUT_REGISTER_ACCOUNT_NUMBER_MESSAGE = "등록하실 계좌번호를 입력해주세요. (Integer-Integer-Integer 형식)";
-    public final static String INPUT_REGISTER_CLIENT_BIRTH_MESSAGE = "생년월일을 입력해주세요. (2000-01-01 형식)";
+    public final static String INPUT_REGISTER_CLIENT_BIRTH_MESSAGE = "생년월일을 입력해주세요. (00-01-01 형식)";
     public final static String INPUT_REGISTER_CLIENT_TEL_MESSAGE = "전화번호를 입력해주세요. (010-1234-1234 형식)";
     public final static String INPUT_REGISTER_CLIENT_ADDRESS_MESSAGE = "거주지 주소를 입력해주세요.";
     public final static String INPUT_REGISTER_CLIENT_PASSWORD_MESSAGE = "사용하실 비밀번호를 입력해주세요. (정수 4글자)";
