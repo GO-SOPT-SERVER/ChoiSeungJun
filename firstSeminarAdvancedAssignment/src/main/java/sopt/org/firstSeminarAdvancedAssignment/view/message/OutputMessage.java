@@ -14,15 +14,15 @@ public class OutputMessage {
 
     public final static String CLIENT_WITHDRAW_MESSAGE = "출금을 위해 계좌번호와 비밀번호를 입력해주세요.";
     public final static String INPUT_WITHDRAW_AMOUNT_MESSAGE = "출금하실 금액을 입력해주세요.";
-    public final static String WITHDRAW_SUCCESS_MESSAGE = "출금이 완료되었습니다.\n출금 후 잔액은 %d원 입니다.";
+    public final static String WITHDRAW_SUCCESS_MESSAGE = "출금이 완료되었습니다.\n출금 후 잔액은 %d원 입니다.\n";
 
     public final static String CLIENT_DEPOSIT_MESSAGE = "입금을 위해 계좌번호를 입력해주세요.";
     public final static String INPUT_DEPOSIT_AMOUNT_MESSAGE = "입금하실 금액을 입력해주세요.";
-    public final static String DEPOSIT_SUCCESS_MESSAGE = "입금이 완료되었습니다.\n입금 후 계좌 내 금액은 %d원 입니다.";
+    public final static String DEPOSIT_SUCCESS_MESSAGE = "입금이 완료되었습니다.\n입금 후 계좌 내 금액은 %d원 입니다.\n";
 
     public final static String CLIENT_TRANSFER_MESSAGE = "돈을 송금할 계좌번호를 입력해주세요.";
     public final static String INPUT_TRANSFER_AMOUNT_MESSAGE = "송금하실 금액을 입력해주세요.";
-    public final static String TRANSFER_SUCCESS_MESSAGE = "송금이 완료되었습니다.\n송금 후 계좌 내 금액은 %d원 입니다.";
+    public final static String TRANSFER_SUCCESS_MESSAGE = "송금이 완료되었습니다.\n송금 후 계좌 내 금액은 %d원 입니다.\n";
 
 
     public final static String INPUT_CLIENT_NAME_MESSAGE = "이름을 입력해주세요.";
