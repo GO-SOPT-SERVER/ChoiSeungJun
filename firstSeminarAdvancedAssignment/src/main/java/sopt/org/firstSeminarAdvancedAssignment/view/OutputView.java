@@ -4,11 +4,12 @@ public class OutputView {
 
     // 고객 등록 메세지
     public void printInputClientInfoMessage() {
+        printEnter();
         System.out.println("고객 등록을 위하여, 정보를 입력해주세요.");
     }
 
     public void printInputAccountNumberForRegisterMessage() {
-        System.out.println("등록하실 계좌번호를 입력해주세요. (중복불가)");
+        System.out.println("등록하실 계좌번호를 입력해주세요. (Integer-Integer-Integer 형식)");
     }
 
     public void printInputBirthForRegisterMessage() {
@@ -24,22 +25,23 @@ public class OutputView {
     }
 
     public void printInputPasswordForRegisterMessage() {
-        System.out.println("사용하실 비밀번호를 입력해주세요.");
+        System.out.println("사용하실 비밀번호를 입력해주세요. (6자)");
     }
 
 
     //잔액 조회 메세지
     public void printCheckAccountBalanceMessage() {
+        printEnter();
         System.out.println("잔액 조회를 위해 계좌번호와 비밀번호를 입력해주세요.");
     }
 
     public void printClientAmountBalance(int amount) {
         System.out.println("해당 계좌의 잔액은 " + amount + "원 입니다.");
-        printEnter();
     }
 
     //출금 메세지
     public void printWithdrawAccountBalanceMessage() {
+        printEnter();
         System.out.println("출금을 위해 계좌번호와 비밀번호를 입력해주세요.");
     }
 
@@ -50,11 +52,11 @@ public class OutputView {
     public void printRemainAmountAfterWithdrawMessage(int amount) {
         System.out.println("출금이 완료되었습니다.");
         System.out.println("출금 후 잔액은 " + amount + "원 입니다.");
-        printEnter();
     }
 
     //입금 메세지
     public void printDepositIntoAccountMessage() {
+        printEnter();
         System.out.println("입금을 위해 계좌번호를 입력해주세요.");
     }
 
@@ -64,7 +66,6 @@ public class OutputView {
 
     public void printAmountAfterDeposit(int amount) {
         System.out.println("입금 후 계좌 내 금액은 " + amount + "원 입니다.");
-        printEnter();
     }
 
     //송금 메세지
@@ -79,7 +80,6 @@ public class OutputView {
     public void printRemainAmountAfterTransferMessage(int amount) {
         System.out.println("송금이 완료되었습니다.");
         System.out.println("송금 후 잔액은 " + amount + "원 입니다.");
-        printEnter();
     }
 
 
@@ -98,15 +98,14 @@ public class OutputView {
 
     public void printWelcomeMessage() {
         System.out.println("반갑습니다 SOPT은행입니다. 무엇을 도와드릴까요?");
-        printEnter();
     }
 
     public void printExitMessage() {
         System.out.println("안녕히가십시오.");
-        printEnter();
     }
 
     public void printInputBankingJobMessage() {
+        printEnter();
         System.out.println("은행 업무를 선택해주세요");
         System.out.println("- 1: 계좌등록\n" +
                 "- 2: 잔액조회\n" +
