@@ -45,5 +45,5 @@
 ###  ☑️ 체크리스트
 
 - [X] 브랜치를 생성 후 변경하였는가
-- [ ] Pull Request에 파트장을 태그하였는가
-- [ ] Pull Request에 코드리뷰조를 태그하였는가
+- [X] Pull Request에 파트장을 태그하였는가
+- [X] Pull Request에 코드리뷰조를 태그하였는가
