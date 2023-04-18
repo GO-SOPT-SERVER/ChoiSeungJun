@@ -72,7 +72,7 @@ public class Client {
     }
 
     private void validatePasswordNumberLength(String password) {
-        if(password.length() != 6) {
+        if(password.length() != 4) {
             throw new IllegalArgumentException(createErrorMessage("비밀번호는 6자로 구성되어야합니다."));
         }
     }
