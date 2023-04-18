@@ -4,14 +4,24 @@ import sopt.org.firstSeminarAdvancedAssignment.service.ClientService;
 import sopt.org.firstSeminarAdvancedAssignment.view.InputView;
 import sopt.org.firstSeminarAdvancedAssignment.view.OutputView;
 
-public class ClientController {
+public class ClientController extends Controller {
     private final ClientService clientService = new ClientService();
-    private final InputView inputView = new InputView();
-    private final OutputView outputView = new OutputView();
+
+    public ClientController() {
+        super(new InputView(), new OutputView());
+    }
+
+    public void enter() {
+        outputView.printWelcomeMessage();
+    }
+
+    public void goOut() {
+        outputView.printExitMessage();
+    }
+
 
 
     public void registerClient() {
-        outputView.printInputClientInfoMessage();
         clientService.registerClient(inputView.inputAccountNumberForClientRegister(), inputView.inputClientName(), inputView.inputBirthForClientRegister(), inputView.inputTelForClientRegister(), inputView.inputAddressForClientRegister(), inputView.inputPasswordForClientRegister());
     }
 
@@ -25,7 +35,12 @@ public class ClientController {
     public void withdrawAccountBalance() {
         outputView.printWithdrawAccountBalanceMessage();
 
-        int remainAmount = clientService.withdrawFromClientAccount(inputView.inputAccountNumber(), inputView.inputPassword(), inputView.inputWithdrawAccount());
+        String accountNumber = inputView.inputAccountNumber();
+        String password = inputView.inputPassword();
+        int withdrawAccount = inputView.inputWithdrawAccount();
+
+
+        int remainAmount = clientService.withdrawFromClientAccount(accountNumber, password, withdrawAccount);
         outputView.printRemainAmountAfterWithdrawMessage(remainAmount);
     }
 
@@ -40,7 +55,12 @@ public class ClientController {
 
         int remainAmount = clientService.transferMoney(inputView.inputAccountNumber(), inputView.inputPassword(), inputView.inputAnotherAccountNumber(), inputView.inputTransferMoneyAmount());
         outputView.printRemainAmountAfterTransferMessage(remainAmount);
+    }
 
+    public String selectBankJob() {
+        String bankingJob = inputView.inputBankingJob();
+
+        return bankingJob;
     }
 
 

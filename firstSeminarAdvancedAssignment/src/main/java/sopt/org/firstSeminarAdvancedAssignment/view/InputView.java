@@ -2,11 +2,14 @@ package sopt.org.firstSeminarAdvancedAssignment.view;
 
 import java.util.Scanner;
 
+import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.WRONG_NUMBER_FORMAT_ERROR_MESSAGE;
+
 public class InputView {
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
     private final OutputView outputView = new OutputView();
 
     public String inputAccountNumberForClientRegister() {
+        outputView.printInputClientInfoMessage();
         outputView.printInputAccountNumberForRegisterMessage();
         return inputString();
     }
@@ -66,12 +69,23 @@ public class InputView {
         return inputInt();
     }
 
+    public String inputBankingJob() {
+        outputView.printInputBankingJobMessage();
+        return inputString();
+    }
+
 
     private String inputString() {
         return sc.nextLine();
     }
 
     private Integer inputInt() {
-        return sc.nextInt();
+        Integer intValue;
+        try {
+            intValue = Integer.parseInt(sc.nextLine());
+            return intValue;
+        }catch (NumberFormatException e) {
+            throw new IllegalArgumentException(WRONG_NUMBER_FORMAT_ERROR_MESSAGE);
+        }
     }
 }
