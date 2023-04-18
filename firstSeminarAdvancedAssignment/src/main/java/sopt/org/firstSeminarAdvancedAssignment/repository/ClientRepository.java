@@ -68,21 +68,21 @@ public class ClientRepository {
             }
         }
         if (!isAccountExist) {
-            throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_ERROR_MESSAGE);
+            throw new IllegalArgumentException(createErrorMessage(WRONG_ACCOUNT_NUMBER_ERROR_MESSAGE));
         }
     }
 
     private void validateIsDuplicatedAccountNumber(String clientAccountNumber) {
         for (String accountNumber : clientDB.keySet()) {
             if (accountNumber.equals(clientAccountNumber)) {
-                throw new IllegalArgumentException(ACCOUNT_NUMBER_DUPLICATED_ERROR_MESSAGE);
+                throw new IllegalArgumentException(createErrorMessage(ACCOUNT_NUMBER_DUPLICATED_ERROR_MESSAGE));
             }
         }
     }
 
     private void validateClientPassword(String password, Client client) {
         if (!client.checkPassword(password)) {
-            throw new IllegalArgumentException(WRONG_PASSWORD_ERROR_MESSAGE);
+            throw new IllegalArgumentException(createErrorMessage(WRONG_PASSWORD_ERROR_MESSAGE));
         }
     }
 }

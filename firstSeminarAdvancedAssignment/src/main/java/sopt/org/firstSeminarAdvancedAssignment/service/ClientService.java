@@ -4,6 +4,7 @@ import sopt.org.firstSeminarAdvancedAssignment.domain.Client;
 import sopt.org.firstSeminarAdvancedAssignment.repository.ClientRepository;
 
 import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_ACCOUNT_BALANCE_AMOUNT_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.createErrorMessage;
 
 public class ClientService {
     private final ClientRepository clientRepository = new ClientRepository();
@@ -40,7 +41,7 @@ public class ClientService {
 
     private void validateAccountBalanceAmount(int amount, int accountBalance) {
         if(accountBalance < amount) {
-            throw new IllegalArgumentException(WRONG_ACCOUNT_BALANCE_AMOUNT_ERROR_MESSAGE);
+            throw new IllegalArgumentException(createErrorMessage(WRONG_ACCOUNT_BALANCE_AMOUNT_ERROR_MESSAGE));
         }
     }
 }

@@ -3,6 +3,7 @@ package sopt.org.firstSeminarAdvancedAssignment.view;
 import java.util.Scanner;
 
 import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_NUMBER_FORMAT_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.createErrorMessage;
 
 public class InputView {
     private final Scanner sc = new Scanner(System.in);
@@ -85,7 +86,7 @@ public class InputView {
             intValue = Integer.parseInt(sc.nextLine());
             return intValue;
         }catch (NumberFormatException e) {
-            throw new IllegalArgumentException(WRONG_NUMBER_FORMAT_ERROR_MESSAGE);
+            throw new IllegalArgumentException(createErrorMessage(WRONG_NUMBER_FORMAT_ERROR_MESSAGE));
         }
     }
 }

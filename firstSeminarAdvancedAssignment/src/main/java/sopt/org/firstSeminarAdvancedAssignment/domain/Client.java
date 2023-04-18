@@ -1,7 +1,6 @@
 package sopt.org.firstSeminarAdvancedAssignment.domain;
 
-import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE;
-import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.*;
 
 public class Client {
 
@@ -53,13 +52,13 @@ public class Client {
                 Integer.parseInt(seperatedAccountNumber[i]);
             }
         } catch (NumberFormatException error) {
-            throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE);
+            throw new IllegalArgumentException(createErrorMessage(WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE));
         }
     }
 
     private void validateAccountNumberLength(String[] seperatedAccountNumber) {
         if (seperatedAccountNumber.length != 3) {
-            throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE);
+            throw new IllegalArgumentException(createErrorMessage(WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE));
         }
     }
 
@@ -71,7 +70,7 @@ public class Client {
 
     private void validateAccountBalanceToTransfer(int transferAmount) {
         if (this.amount < transferAmount) {
-            throw new IllegalArgumentException(WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE);
+            throw new IllegalArgumentException(createErrorMessage(WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE));
         }
     }
 

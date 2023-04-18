@@ -4,6 +4,7 @@ import sopt.org.firstSeminarAdvancedAssignment.controller.ClientController;
 
 import static sopt.org.firstSeminarAdvancedAssignment.view.OutputView.printError;
 import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_BANKING_JOB_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.createErrorMessage;
 
 public class BankProgram {
     private static final String FUNC_REGISTER = "1";
@@ -52,7 +53,7 @@ public class BankProgram {
                 clientController.goOut();
                 break;
             default:
-                throw new IllegalArgumentException(WRONG_BANKING_JOB_ERROR_MESSAGE);
+                throw new IllegalArgumentException(createErrorMessage(WRONG_BANKING_JOB_ERROR_MESSAGE));
         }
 
         return isRun;
