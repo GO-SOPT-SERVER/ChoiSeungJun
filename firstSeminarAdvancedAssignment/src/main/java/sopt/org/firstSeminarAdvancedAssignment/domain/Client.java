@@ -14,13 +14,11 @@ public class Client {
 
 
     public Client(String accountNumber, String name, String birth, String tel, String address, String password) {
-        validateAccountNumberForRegister(accountNumber);
-        this.accountNumber = accountNumber;
-        validatePasswordForRegister(password);
-        this.password = password;
+        this.accountNumber = validateAccountNumberForRegister(accountNumber);
+        this.password = validatePasswordForRegister(password);
         this.name = name;
-        this.birth = birth;
-        this.tel = tel;
+        this.birth = validateBirthForRegister(birth);
+        this.tel = validateTelForRegister(tel);
         this.address = address;
         this.amount = 0;
     }
@@ -42,12 +40,13 @@ public class Client {
     }
 
 
-
-    private void validateAccountNumberForRegister(String accountNumber) {
+    private String validateAccountNumberForRegister(String accountNumber) {
         String[] seperatedAccountNumber = accountNumber.split("-");
 
         validateAccountNumberLength(seperatedAccountNumber);
         validateAccountNumberFormat(seperatedAccountNumber);
+
+        return accountNumber;
     }
 
     private void validateAccountNumberFormat(String[] seperatedAccountNumber) {
@@ -66,13 +65,15 @@ public class Client {
         }
     }
 
-    private void validatePasswordForRegister(String password) {
-        validatePasswordNumberFormat(password);
+    private String validatePasswordForRegister(String password) {
         validatePasswordNumberLength(password);
+        validatePasswordNumberFormat(password);
+
+        return password;
     }
 
     private void validatePasswordNumberLength(String password) {
-        if(password.length() != 4) {
+        if (password.length() != 4) {
             throw new IllegalArgumentException(createErrorMessage("비밀번호는 6자로 구성되어야합니다."));
         }
     }
@@ -80,7 +81,7 @@ public class Client {
     private void validatePasswordNumberFormat(String password) {
         try {
             Integer.parseInt(password);
-        }catch (NumberFormatException e) {
+        } catch (Exception e) {
             throw new IllegalArgumentException(createErrorMessage("비밀번호는 정수형으로 구성되어야합니다."));
         }
     }
@@ -97,6 +98,79 @@ public class Client {
             throw new IllegalArgumentException(createErrorMessage(WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE));
         }
     }
+
+    private String validateBirthForRegister(String birth) {
+        String[] seperatedBirth = birth.split("-");
+        validateBirthLength(seperatedBirth);
+        validateBirthSizeFormat(seperatedBirth);
+        validateBirthTypeFormat(seperatedBirth);
+
+        return birth;
+    }
+
+    private void validateBirthTypeFormat(String[] seperatedBirth) {
+        try {
+            for (int i = 0; i < seperatedBirth.length; i++) {
+                Integer.parseInt(seperatedBirth[i]);
+            }
+        } catch (Exception error) {
+            throw new IllegalArgumentException(createErrorMessage(WRONG_BIRTH_FORMAT_ERROR_MESSAGE));
+        }
+    }
+
+    private void validateBirthSizeFormat(String[] seperatedBirth) {
+        int yearLength = seperatedBirth[0].length();
+        int monthLength = seperatedBirth[1].length();
+        int dayLength = seperatedBirth[2].length();
+
+        if (yearLength != 2 || monthLength != 2 || dayLength != 2) {
+            throw new IllegalArgumentException(createErrorMessage(WRONG_BIRTH_FORMAT_ERROR_MESSAGE));
+        }
+    }
+
+    private void validateBirthLength(String[] seperatedBirth) {
+        if (seperatedBirth.length != 3) {
+            throw new IllegalArgumentException(createErrorMessage(WRONG_BIRTH_LENGTH_ERROR_MESSAGE));
+        }
+    }
+
+
+    private String validateTelForRegister(String tel) {
+        String[] seperatedTel = tel.split("-");
+
+        validateTelLength(seperatedTel);
+        validateTelSizeFormat(seperatedTel);
+        validateTelTypeFormat(seperatedTel);
+
+        return tel;
+    }
+
+    private void validateTelTypeFormat(String[] seperatedTel) {
+        try {
+            for (int i = 0; i < seperatedTel.length; i++) {
+                Integer.parseInt(seperatedTel[i]);
+            }
+        } catch (Exception error) {
+            throw new IllegalArgumentException(createErrorMessage(WRONG_TEL_FORMAT_ERROR_MESSAGE));
+        }
+    }
+
+    private void validateTelSizeFormat(String[] seperatedTel) {
+        int firstTelLength = seperatedTel[0].length();
+        int middleTelLength = seperatedTel[1].length();
+        int lastTelLength = seperatedTel[2].length();
+
+        if (firstTelLength != 3 || middleTelLength != 4 || lastTelLength != 4) {
+            throw new IllegalArgumentException(createErrorMessage(WRONG_TEL_FORMAT_ERROR_MESSAGE));
+        }
+    }
+
+    private void validateTelLength(String[] seperatedTel) {
+        if (seperatedTel.length != 3) {
+            throw new IllegalArgumentException(createErrorMessage(WRONG_TEL_LENGTH_ERROR_MESSAGE));
+        }
+    }
+
 
     public int withdraw(int withdrawAmount) {
         this.amount -= withdrawAmount;
