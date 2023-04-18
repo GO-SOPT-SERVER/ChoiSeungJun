@@ -3,9 +3,16 @@ package sopt.org.firstSeminarAdvancedAssignment;
 import sopt.org.firstSeminarAdvancedAssignment.controller.ClientController;
 
 import static sopt.org.firstSeminarAdvancedAssignment.view.OutputView.printError;
-import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.WRONG_BANKING_JOB_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_BANKING_JOB_ERROR_MESSAGE;
 
 public class BankProgram {
+    private static final String FUNC_REGISTER = "1";
+    private static final String FUNC_SHOW = "2";
+    private static final String FUNC_WITHDRAW = "3";
+    private static final String FUNC_DEPOSIT = "4";
+    private static final String FUNC_TRANSFER = "5";
+    private static final String FUNC_EXIT = "x";
+
     private final ClientController clientController = new ClientController();
 
 
@@ -25,22 +32,22 @@ public class BankProgram {
     private boolean doBanking() {
         boolean isRun = true;
         switch (clientController.selectBankJob()) {
-            case "1":
+            case FUNC_REGISTER:
                 clientController.registerClient();
                 break;
-            case "2":
+            case FUNC_SHOW:
                 clientController.getClientAccountBalance();
                 break;
-            case "3":
+            case FUNC_WITHDRAW:
                 clientController.withdrawAccountBalance();
                 break;
-            case "4":
+            case FUNC_DEPOSIT:
                 clientController.depositMoneyIntoAccount();
                 break;
-            case "5":
+            case FUNC_TRANSFER:
                 clientController.transferMoneyToAnotherAccount();
                 break;
-            case "x":
+            case FUNC_EXIT:
                 isRun = false;
                 clientController.goOut();
                 break;

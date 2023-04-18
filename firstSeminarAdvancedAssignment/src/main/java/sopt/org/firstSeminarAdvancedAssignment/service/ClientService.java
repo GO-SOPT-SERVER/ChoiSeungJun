@@ -3,7 +3,7 @@ package sopt.org.firstSeminarAdvancedAssignment.service;
 import sopt.org.firstSeminarAdvancedAssignment.domain.Client;
 import sopt.org.firstSeminarAdvancedAssignment.repository.ClientRepository;
 
-import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.WRONG_ACCOUNT_BALANCE_AMOUNT_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_ACCOUNT_BALANCE_AMOUNT_ERROR_MESSAGE;
 
 public class ClientService {
     private final ClientRepository clientRepository = new ClientRepository();

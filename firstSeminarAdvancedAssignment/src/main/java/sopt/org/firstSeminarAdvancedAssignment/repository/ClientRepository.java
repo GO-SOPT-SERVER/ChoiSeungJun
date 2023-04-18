@@ -5,7 +5,7 @@ import sopt.org.firstSeminarAdvancedAssignment.domain.Client;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.*;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.*;
 
 public class ClientRepository {
     private static final Map<String, Client> clientDB = new LinkedHashMap<>();

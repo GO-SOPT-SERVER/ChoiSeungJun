@@ -1,7 +1,7 @@
 package sopt.org.firstSeminarAdvancedAssignment.domain;
 
-import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE;
-import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE;
 
 public class Client {
 

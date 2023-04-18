@@ -2,7 +2,7 @@ package sopt.org.firstSeminarAdvancedAssignment.view;
 
 import java.util.Scanner;
 
-import static sopt.org.firstSeminarAdvancedAssignment.view.TextData.WRONG_NUMBER_FORMAT_ERROR_MESSAGE;
+import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.WRONG_NUMBER_FORMAT_ERROR_MESSAGE;
 
 public class InputView {
     private final Scanner sc = new Scanner(System.in);
