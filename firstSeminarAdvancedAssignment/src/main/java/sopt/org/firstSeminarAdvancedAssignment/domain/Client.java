@@ -15,7 +15,7 @@ public class Client {
 
 
     public Client(String accountNumber, String name, String birth, String tel, String address, String password) {
-        checkAccountNumber(accountNumber);
+        validateAccountNumber(accountNumber);
         this.accountNumber = accountNumber;
         this.password = password;
         this.name = name;
@@ -40,14 +40,14 @@ public class Client {
         return amount;
     }
 
-    private void checkAccountNumber(String accountNumber) {
+    private void validateAccountNumber(String accountNumber) {
         String[] seperatedAccountNumber = accountNumber.split("-");
 
-        checkAccountNumberLength(seperatedAccountNumber);
-        checkAccountNumberFormat(seperatedAccountNumber);
+        validateAccountNumberLength(seperatedAccountNumber);
+        validateAccountNumberFormat(seperatedAccountNumber);
     }
 
-    private void checkAccountNumberFormat(String[] seperatedAccountNumber) {
+    private void validateAccountNumberFormat(String[] seperatedAccountNumber) {
         try {
             for (int i = 0; i < seperatedAccountNumber.length; i++) {
                 Integer.parseInt(seperatedAccountNumber[i]);
@@ -57,13 +57,19 @@ public class Client {
         }
     }
 
-    private void checkAccountNumberLength(String[] seperatedAccountNumber) {
+    private void validateAccountNumberLength(String[] seperatedAccountNumber) {
         if (seperatedAccountNumber.length != 3) {
             throw new IllegalArgumentException(WRONG_ACCOUNT_NUMBER_FORMAT_ERROR_MESSAGE);
         }
     }
 
-    public void checkAccountBalanceToTransfer(int transferAmount) {
+    public int transfer(int transferAmount) {
+        validateAccountBalanceToTransfer(transferAmount);
+        this.amount -= transferAmount;
+        return this.amount;
+    }
+
+    private void validateAccountBalanceToTransfer(int transferAmount) {
         if (this.amount < transferAmount) {
             throw new IllegalArgumentException(WRONG_TRANSFER_AMOUNT_ERROR_MESSAGE);
         }
