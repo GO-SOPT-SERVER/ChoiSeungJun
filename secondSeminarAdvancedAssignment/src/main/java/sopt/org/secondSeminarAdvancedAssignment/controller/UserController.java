@@ -14,7 +14,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping(value = "user", produces = "application/json; charset=UTF8")
 @RequiredArgsConstructor
-public class UserController {
+public class UserController extends ResponseEntityGenerator{
     private final UserService userService;
 
     @PostMapping("/save")
@@ -28,7 +28,7 @@ public class UserController {
     public ResponseEntity<?> findUser(@PathVariable Long userId) {
         Optional<User> findUser = userService.findUserById(userId);
 
-        return generateUserResponseEntity(findUser, userId);
+        return generateFindResponseEntity(findUser, userId);
     }
 
     @PutMapping("/update/{userId}")
@@ -46,29 +46,11 @@ public class UserController {
     }
 
 
-
-    private ResponseEntity<?> generateSaveResponseEntity(boolean saveResult) {
-        return (saveResult) ?
-                new ResponseEntity<>("유저에 대한 정보가 성공적으로 저장 되었습니다.", HttpStatus.OK):
-                new ResponseEntity<>("유저 등록에 실패하였습니다.", HttpStatus.NO_CONTENT);
-    }
-
-    private ResponseEntity<?> generateUserResponseEntity(Optional<User> user, Long userId) {
+    @Override
+    public ResponseEntity<?> generateFindResponseEntity(Optional<?> user, Long userId) {
         return (user.isEmpty()) ?
                 new ResponseEntity<>(userId + "번 유저에 대한 정보가 존재하지 않습니다.", HttpStatus.NO_CONTENT) :
-                new ResponseEntity<>(user.get().toDto(userId), HttpStatus.OK);
-    }
-
-    private ResponseEntity<?> generateUpdateResponseEntity(boolean updateResult, Long userId) {
-        return (updateResult) ?
-                new ResponseEntity<>(userId + "번 유저에 대한 정보가 성공적으로 업데이트 되었습니다.", HttpStatus.OK):
-                new ResponseEntity<>(userId + "번 유저에 대한 정보가 존재하지 않습니다.", HttpStatus.NO_CONTENT);
-    }
-
-    private ResponseEntity<?> generateDeleteResponseEntity(boolean deleteResult, Long userId) {
-        return (deleteResult) ?
-                new ResponseEntity<>(userId + "번 유저에 대한 정보가 성공적으로 삭제 되었습니다.", HttpStatus.OK):
-                new ResponseEntity<>(userId + "번 유저에 대한 정보가 존재하지 않습니다.", HttpStatus.NO_CONTENT);
+                new ResponseEntity<>(((User)user.get()).toDto(userId), HttpStatus.OK);
     }
 
 }
