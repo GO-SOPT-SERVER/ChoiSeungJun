@@ -14,8 +14,16 @@ public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
 
     @Override
-    public void saveUser(UserRequestDto userDto) {
-        userRepository.save(userDto.from());
+    public boolean saveUser(UserRequestDto userDto) {
+        boolean saveResult = true;
+
+        try {
+            userRepository.save(userDto.from());
+        } catch (Exception e) {
+            saveResult = false;
+        }
+
+        return saveResult;
     }
 
     @Override

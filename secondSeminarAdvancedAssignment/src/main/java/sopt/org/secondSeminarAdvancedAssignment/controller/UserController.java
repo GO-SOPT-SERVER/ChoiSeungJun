@@ -19,8 +19,9 @@ public class UserController {
 
     @PostMapping("/save")
     public ResponseEntity<?> saveUser(@RequestBody UserRequestDto userRequestDto) {
-        userService.saveUser(userRequestDto);
-        return new ResponseEntity("유저 저장 완료", HttpStatus.OK);
+        boolean saveResult = userService.saveUser(userRequestDto);
+
+        return generateSaveResponseEntity(saveResult);
     }
 
     @GetMapping("/{userId}")
@@ -46,6 +47,11 @@ public class UserController {
 
 
 
+    private ResponseEntity<?> generateSaveResponseEntity(boolean saveResult) {
+        return (saveResult) ?
+                new ResponseEntity<>("유저에 대한 정보가 성공적으로 저장 되었습니다.", HttpStatus.OK):
+                new ResponseEntity<>("유저 등록에 실패하였습니다.", HttpStatus.NO_CONTENT);
+    }
 
     private ResponseEntity<?> generateUserResponseEntity(Optional<User> user, Long userId) {
         return (user.isEmpty()) ?

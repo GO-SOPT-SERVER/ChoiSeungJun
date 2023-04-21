@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface UserService{
 
-    void saveUser(UserRequestDto userDto);
+    boolean saveUser(UserRequestDto userDto);
 
     Optional<User> findUserById(Long userId);
 
