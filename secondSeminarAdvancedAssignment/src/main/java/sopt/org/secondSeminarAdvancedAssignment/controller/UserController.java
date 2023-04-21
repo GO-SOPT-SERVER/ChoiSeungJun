@@ -37,6 +37,13 @@ public class UserController {
         return generateUpdateResponseEntity(updateResult, userId);
     }
 
+    @DeleteMapping("/delete/{userId}")
+    public ResponseEntity<?> updateUser(@PathVariable Long userId) {
+        boolean deleteResult = userService.deleteUser(userId);
+
+        return generateDeleteResponseEntity(deleteResult, userId);
+    }
+
 
 
 
@@ -49,6 +56,12 @@ public class UserController {
     private ResponseEntity<?> generateUpdateResponseEntity(boolean updateResult, Long userId) {
         return (updateResult) ?
                 new ResponseEntity<>(userId + "번 유저에 대한 정보가 성공적으로 업데이트 되었습니다.", HttpStatus.OK):
+                new ResponseEntity<>(userId + "번 유저에 대한 정보가 존재하지 않습니다.", HttpStatus.NO_CONTENT);
+    }
+
+    private ResponseEntity<?> generateDeleteResponseEntity(boolean deleteResult, Long userId) {
+        return (deleteResult) ?
+                new ResponseEntity<>(userId + "번 유저에 대한 정보가 성공적으로 삭제 되었습니다.", HttpStatus.OK):
                 new ResponseEntity<>(userId + "번 유저에 대한 정보가 존재하지 않습니다.", HttpStatus.NO_CONTENT);
     }
 

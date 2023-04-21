@@ -41,4 +41,19 @@ public class UserServiceImpl implements UserService {
 
         return updateResult;
     }
+
+    @Override
+    public boolean deleteUser(Long userId) {
+        boolean deleteResult = true;
+
+        Optional<User> user = userRepository.find(userId);
+
+        if(user.isEmpty()) {
+            deleteResult = false;
+            return deleteResult;
+        }
+
+        userRepository.delete(userId);
+        return deleteResult;
+    }
 }

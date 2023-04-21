@@ -32,6 +32,10 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public void update(Long userId, User user) {
         userData.replace(userId, user);
-        System.out.println("userData.get(userId) = " + userData.get(userId).getName());
+    }
+
+    @Override
+    public void delete(Long userId) {
+        userData.remove(userId);
     }
 }
