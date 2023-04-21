@@ -11,4 +11,6 @@ public interface UserService{
     void saveUser(UserRequestDto userDto);
 
     Optional<User> findUserById(Long userId);
+
+    boolean updateUser(Long userId, UserRequestDto userDto);
 }

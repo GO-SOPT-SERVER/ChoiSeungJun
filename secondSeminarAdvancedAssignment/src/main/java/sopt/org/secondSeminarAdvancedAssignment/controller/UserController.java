@@ -30,12 +30,25 @@ public class UserController {
         return generateUserResponseEntity(findUser, userId);
     }
 
+    @PutMapping("/update/{userId}")
+    public ResponseEntity<?> updateUser(@PathVariable Long userId, @RequestBody UserRequestDto userRequestDto) {
+        boolean updateResult = userService.updateUser(userId, userRequestDto);
+
+        return generateUpdateResponseEntity(updateResult, userId);
+    }
+
+
 
     private ResponseEntity<?> generateUserResponseEntity(Optional<User> user, Long userId) {
         return (user.isEmpty()) ?
                 new ResponseEntity<>(userId + "번 유저에 대한 정보가 존재하지 않습니다.", HttpStatus.NO_CONTENT) :
                 new ResponseEntity<>(user.get().toDto(userId), HttpStatus.OK);
+    }
 
+    private ResponseEntity<?> generateUpdateResponseEntity(boolean updateResult, Long userId) {
+        return (updateResult) ?
+                new ResponseEntity<>(userId + "번 유저에 대한 정보가 성공적으로 업데이트 되었습니다.", HttpStatus.OK):
+                new ResponseEntity<>(userId + "번 유저에 대한 정보가 존재하지 않습니다.", HttpStatus.NO_CONTENT);
     }
 
 }

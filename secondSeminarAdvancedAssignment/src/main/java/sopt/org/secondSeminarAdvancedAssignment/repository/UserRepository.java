@@ -12,4 +12,6 @@ public interface UserRepository {
     void save(User user);
 
     Optional<User> find(Long userId);
+
+    void update(Long userId, User user);
 }

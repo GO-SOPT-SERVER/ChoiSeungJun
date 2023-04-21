@@ -22,4 +22,23 @@ public class UserServiceImpl implements UserService {
     public Optional<User> findUserById(Long userId) {
         return userRepository.find(userId);
     }
+
+    @Override
+    public boolean updateUser(Long userId, UserRequestDto updateDto) {
+        boolean updateResult = true;
+
+        Optional<User> user = userRepository.find(userId);
+
+        if(user.isEmpty()) {
+            updateResult = false;
+            return updateResult;
+        }
+
+        User updatedUser = user.get();
+        updatedUser.update(updateDto);
+
+        userRepository.update(userId, updatedUser);
+
+        return updateResult;
+    }
 }

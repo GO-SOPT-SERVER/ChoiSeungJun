@@ -28,4 +28,10 @@ public class UserRepositoryImpl implements UserRepository {
 
         return user;
     }
+
+    @Override
+    public void update(Long userId, User user) {
+        userData.replace(userId, user);
+        System.out.println("userData.get(userId) = " + userData.get(userId).getName());
+    }
 }

@@ -3,6 +3,7 @@ package sopt.org.secondSeminarAdvancedAssignment.domain;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import sopt.org.secondSeminarAdvancedAssignment.dto.UserRequestDto;
 import sopt.org.secondSeminarAdvancedAssignment.dto.UserResponseDto;
 
 @Builder
@@ -15,5 +16,10 @@ public class User {
 
     public UserResponseDto toDto(Long userId) {
         return new UserResponseDto(userId, name, age);
+    }
+
+    public void update(UserRequestDto userRequestDto) {
+        this.name = userRequestDto.getName();
+        this.age = userRequestDto.getAge();
     }
 }
