@@ -23,7 +23,7 @@ public class UserController {
         return new ResponseEntity("유저 저장 완료", HttpStatus.OK);
     }
 
-    @GetMapping("{userId}")
+    @GetMapping("/{userId}")
     public ResponseEntity<?> findUser(@PathVariable Long userId) {
         Optional<User> findUser = userService.findUserById(userId);
 
@@ -36,6 +36,7 @@ public class UserController {
 
         return generateUpdateResponseEntity(updateResult, userId);
     }
+
 
 
 
