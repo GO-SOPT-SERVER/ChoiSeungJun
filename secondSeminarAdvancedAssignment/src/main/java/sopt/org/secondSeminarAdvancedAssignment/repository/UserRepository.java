@@ -4,9 +4,12 @@ import sopt.org.secondSeminarAdvancedAssignment.domain.User;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 public interface UserRepository {
     Map<Long, User> userData = new HashMap<>();
 
     void save(User user);
+
+    Optional<User> find(Long userId);
 }
