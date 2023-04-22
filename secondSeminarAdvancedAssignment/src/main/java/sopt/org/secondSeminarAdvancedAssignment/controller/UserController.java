@@ -12,34 +12,34 @@ import sopt.org.secondSeminarAdvancedAssignment.service.UserService;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value = "user", produces = "application/json; charset=UTF8")
+@RequestMapping(value = "/user", produces = "application/json; charset=UTF8")
 @RequiredArgsConstructor
 public class UserController extends ResponseEntityGenerator{
     private final UserService userService;
 
     @PostMapping("/save")
-    public ResponseEntity<?> saveUser(@RequestBody UserRequestDto userRequestDto) {
+    public ResponseEntity<?> saveUser(@RequestBody final UserRequestDto userRequestDto) {
         boolean saveResult = userService.saveUser(userRequestDto);
 
         return generateSaveResponseEntity(saveResult);
     }
 
     @GetMapping("/{userId}")
-    public ResponseEntity<?> findUser(@PathVariable Long userId) {
+    public ResponseEntity<?> findUser(@PathVariable final Long userId) {
         Optional<User> findUser = userService.findUserById(userId);
 
         return generateFindResponseEntity(findUser, userId);
     }
 
     @PutMapping("/update/{userId}")
-    public ResponseEntity<?> updateUser(@PathVariable Long userId, @RequestBody UserRequestDto userRequestDto) {
+    public ResponseEntity<?> updateUser(@PathVariable final Long userId, @RequestBody final UserRequestDto userRequestDto) {
         boolean updateResult = userService.updateUser(userId, userRequestDto);
 
         return generateUpdateResponseEntity(updateResult, userId);
     }
 
     @DeleteMapping("/delete/{userId}")
-    public ResponseEntity<?> updateUser(@PathVariable Long userId) {
+    public ResponseEntity<?> updateUser(@PathVariable final Long userId) {
         boolean deleteResult = userService.deleteUser(userId);
 
         return generateDeleteResponseEntity(deleteResult, userId);
@@ -47,7 +47,7 @@ public class UserController extends ResponseEntityGenerator{
 
 
     @Override
-    public ResponseEntity<?> generateFindResponseEntity(Optional<?> user, Long userId) {
+    public ResponseEntity<?> generateFindResponseEntity(Optional<?> user, final Long userId) {
         return (user.isEmpty()) ?
                 new ResponseEntity<>(userId + "번 유저에 대한 정보가 존재하지 않습니다.", HttpStatus.NO_CONTENT) :
                 new ResponseEntity<>(((User)user.get()).toDto(userId), HttpStatus.OK);
