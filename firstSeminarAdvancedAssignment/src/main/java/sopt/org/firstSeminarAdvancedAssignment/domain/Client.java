@@ -1,6 +1,9 @@
 package sopt.org.firstSeminarAdvancedAssignment.domain;
 
+import lombok.Builder;
+
 import static sopt.org.firstSeminarAdvancedAssignment.view.message.ErrorMessage.*;
+
 
 public class Client {
 
@@ -13,6 +16,7 @@ public class Client {
     private String address;
 
 
+    @Builder
     public Client(String accountNumber, String name, String birth, String tel, String address, String password) {
         this.accountNumber = validateAccountNumberForRegister(accountNumber);
         this.password = validatePasswordForRegister(password);

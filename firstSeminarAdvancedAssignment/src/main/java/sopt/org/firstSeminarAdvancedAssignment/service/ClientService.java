@@ -10,7 +10,15 @@ public class ClientService {
     private final ClientRepository clientRepository = new ClientRepository();
 
     public void registerClient(String accountNumber, String name, String birth, String tel, String address, String password) {
-        Client client = new Client(accountNumber, name, birth, tel, address, password);
+        Client client = Client.builder()
+                .accountNumber(accountNumber)
+                .name(name)
+                .birth(birth)
+                .tel(tel)
+                .address(address)
+                .password(password)
+                .build();
+
         clientRepository.register(client);
     }
 
@@ -40,7 +48,7 @@ public class ClientService {
     }
 
     private void validateAccountBalanceAmount(int amount, int accountBalance) {
-        if(accountBalance < amount) {
+        if (accountBalance < amount) {
             throw new IllegalArgumentException(createErrorMessage(WRONG_ACCOUNT_BALANCE_AMOUNT_ERROR_MESSAGE));
         }
     }
