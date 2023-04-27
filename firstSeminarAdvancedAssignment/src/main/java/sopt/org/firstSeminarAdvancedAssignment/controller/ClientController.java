@@ -53,7 +53,12 @@ public class ClientController extends Controller {
 
     public void transferMoneyToAnotherAccount() {
 
-        int remainAmount = clientService.transferMoney(inputView.inputAccountNumber(), inputView.inputPassword(), inputView.inputAnotherAccountNumber(), inputView.inputTransferMoneyAmount());
+        int remainAmount = clientService.transferMoney(
+                inputView.inputAccountNumber(), 
+                inputView.inputPassword(), 
+                inputView.inputAnotherAccountNumber(), 
+                inputView.inputTransferMoneyAmount()
+            );
         outputView.printRemainAmountAfterTransferMessage(remainAmount);
     }
 
