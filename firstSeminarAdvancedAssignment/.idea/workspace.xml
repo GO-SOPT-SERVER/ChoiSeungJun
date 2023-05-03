@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="01b737e9-7b52-459d-9d9a-21d28704245e" name="Changes" comment="docs: 체크리스트 수행 완료 #1">
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="ThirdSeminar" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OXgpTKhSSSGieWHPA0rvMDaSW7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/jun/IdeaProjects/ChoiSeungJun/firstSeminarAdvancedAssignment",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "spring.configuration.checksum": "7acfeb07504df0fffa6e222d0e41b820"
+  }
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.FirstSeminarAdvancedAssignmentApplication">
+    <configuration name="FirstSeminarAdvancedAssignmentApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="firstSeminarAdvancedAssignment_main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sopt.org.firstSeminarAdvancedAssignment.FirstSeminarAdvancedAssignmentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FirstSeminarAdvancedAssignmentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <option name="ALTERNATIVE_JRE_PATH" value="zulu-11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <module name="firstSeminarAdvancedAssignment_main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="sopt.org.firstSeminarAdvancedAssignment.FirstSeminarAdvancedAssignmentApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="01b737e9-7b52-459d-9d9a-21d28704245e" name="Changes" comment="" />
+      <created>1681712523334</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681712523334</updated>
+      <workItem from="1681712524440" duration="901000" />
+      <workItem from="1681791474777" duration="16360000" />
+      <workItem from="1682059443968" duration="10000" />
+      <workItem from="1682260769944" duration="40000" />
+      <workItem from="1682260818215" duration="780000" />
+      <workItem from="1682261898410" duration="126000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: 은행 기능 구현 #1">
+      <created>1681796138259</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681796138259</updated>
+    </task>
+    <task id="LOCAL-00002" summary="docs: 비밀번호 등록 예외 사항 추가 #1">
+      <created>1681797031637</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681797031637</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactor: 출력 메세지 형식 수정 #1">
+      <created>1681797166310</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681797166310</updated>
+    </task>
+    <task id="LOCAL-00004" summary="docs: 입금 재확인 기능 추가 #1">
+      <created>1681798099734</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681798099734</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactor: 매직 리터럴 제거 #1">
+      <created>1681798818004</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681798818004</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactor: 송금 검증 로직 위치 송금 기능 내부로 이동 #1">
+      <created>1681802503847</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681802503847</updated>
+    </task>
+    <task id="LOCAL-00007" summary="refactor: 에러메시지 출력 형식 변경 #1">
+      <created>1681803951987</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681803951987</updated>
+    </task>
+    <task id="LOCAL-00008" summary="docs: 고객등록 시, 비밀번호 예외처리 사항 추가 #1">
+      <created>1681804407534</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1681804407534</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: 고객등록 시, 비밀번호 예외처리 사항 구현 #1&#10;&#10;- 비밀번호가 6자가 아니라면, 예외발생&#10;- 비밀번호가 정수형이 아니라면, 예외발생">
+      <created>1681804797880</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681804797880</updated>
+    </task>
+    <task id="LOCAL-00010" summary="docs: printf 사용 문자열 상수 끝부분에 newline(\n)추가 #1">
+      <created>1681809880866</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681809880866</updated>
+    </task>
+    <task id="LOCAL-00011" summary="fix: 고객 등록 시, 패스워드 글자수 변경 #1&#10;6글자 -&gt; 4글자">
+      <created>1681810011831</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681810011831</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: 개인정보 등록 예외처리 구현 #1&#10;&#10;- 생년월일이 'Integer(2)-Integer(2)-Integer(2)' 형식이 아니라면, 예외발생&#10;- 전화번호가 'Integer(3)-Integer(4)-Integer(4)' 형식이 아니라면, 예외발생">
+      <created>1681813156362</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681813156362</updated>
+    </task>
+    <task id="LOCAL-00013" summary="refactor: 출력 메서드 Wrapping #1">
+      <created>1681813645548</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681813645548</updated>
+    </task>
+    <task id="LOCAL-00014" summary="fix: 고객 등록 메세지 미변경사항 반영 #1&#10;&#10;생년월일 형식 변경사항 반영&#10;Integer(4)-Integer(2)-Integer(2)&#10;=&gt;&#10;Integer(2)-Integer(2)-Integer(2)">
+      <created>1681813749471</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681813749471</updated>
+    </task>
+    <task id="LOCAL-00015" summary="docs: 체크리스트 추가 #1">
+      <created>1681814198362</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681814198362</updated>
+    </task>
+    <task id="LOCAL-00016" summary="docs: 체크리스트 수행 완료 #1">
+      <created>1681815006346</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681815006346</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: 은행 기능 구현 #1" />
+    <MESSAGE value="docs: 비밀번호 등록 예외 사항 추가 #1" />
+    <MESSAGE value="refactor: 출력 메세지 형식 수정 #1" />
+    <MESSAGE value="docs: 입금 재확인 기능 추가 #1" />
+    <MESSAGE value="refactor: 매직 리터럴 제거 #1" />
+    <MESSAGE value="refactor: 송금 검증 로직 위치 송금 기능 내부로 이동 #1" />
+    <MESSAGE value="refactor: 에러메시지 출력 형식 변경 #1" />
+    <MESSAGE value="docs: 고객등록 시, 비밀번호 예외처리 사항 추가 #1" />
+    <MESSAGE value="feat: 고객등록 시, 비밀번호 예외처리 사항 구현 #1&#10;&#10;- 비밀번호가 6자가 아니라면, 예외발생&#10;- 비밀번호가 정수형이 아니라면, 예외발생" />
+    <MESSAGE value="docs: printf 사용 문자열 상수 끝부분에 newline(\n)추가 #1" />
+    <MESSAGE value="fix: 고객 등록 시, 패스워드 글자수 변경 #1&#10;6글자 -&gt; 4글자" />
+    <MESSAGE value="feat: 개인정보 등록 예외처리 구현 #1&#10;&#10;- 생년월일이 'Integer(2)-Integer(2)-Integer(2)' 형식이 아니라면, 예외발생&#10;- 전화번호가 'Integer(3)-Integer(4)-Integer(4)' 형식이 아니라면, 예외발생" />
+    <MESSAGE value="refactor: 출력 메서드 Wrapping #1" />
+    <MESSAGE value="fix: 고객 등록 메세지 미변경사항 반영 #1&#10;&#10;생년월일 형식 변경사항 반영&#10;Integer(4)-Integer(2)-Integer(2)&#10;=&gt;&#10;Integer(2)-Integer(2)-Integer(2)" />
+    <MESSAGE value="docs: 체크리스트 추가 #1" />
+    <MESSAGE value="docs: 체크리스트 수행 완료 #1" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: 체크리스트 수행 완료 #1" />
+  </component>
+</project>
