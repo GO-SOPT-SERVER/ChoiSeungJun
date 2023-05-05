@@ -28,4 +28,10 @@ public class PostService {
 
         return PostResponseDto.of(savedPost.getPostId(), savedPost.getTitle(), savedPost.getContent(), user.getUsername());
     }
+
+    public PostResponseDto findPostById(Long postId) {
+        Post post = postRepository.findById(postId).orElseThrow(() -> new IllegalArgumentException());
+
+        return PostResponseDto.of(post.getPostId(), post.getTitle(), post.getContent(), post.getUser().getUsername());
+    }
 }

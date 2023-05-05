@@ -22,4 +22,10 @@ public class PostController {
     public ApiResponseDto<PostResponseDto> create(@RequestBody @Valid final PostRequestDto postRequestDto) {
         return ApiResponseDto.success(SuccessStatus.POST_SUCCESS, postService.addPost(postRequestDto));
     }
+
+    @GetMapping("/{postId}")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponseDto<PostResponseDto> findById(@PathVariable @Valid final Long postId) {
+        return ApiResponseDto.success(SuccessStatus.POST_FIND_SUCCESS, postService.findPostById(postId));
+    }
 }
