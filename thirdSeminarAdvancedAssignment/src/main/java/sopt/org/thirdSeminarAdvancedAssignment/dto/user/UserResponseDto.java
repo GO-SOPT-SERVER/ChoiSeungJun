@@ -1,4 +1,4 @@
-package sopt.org.thirdSeminarAdvancedAssignment.dto;
+package sopt.org.thirdSeminarAdvancedAssignment.dto.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

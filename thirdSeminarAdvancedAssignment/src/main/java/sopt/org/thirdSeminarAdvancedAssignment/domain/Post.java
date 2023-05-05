@@ -22,9 +22,17 @@ public class Post {
     private String title;
 
     @Column
-    private int content;
+    private String content;
 
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user;
+
+    public static Post of(String title, String content, User user) {
+        return Post.builder()
+                .title(title)
+                .content(content)
+                .user(user)
+                .build();
+    }
 }

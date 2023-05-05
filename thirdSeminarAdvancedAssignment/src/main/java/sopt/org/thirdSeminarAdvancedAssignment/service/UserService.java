@@ -3,8 +3,8 @@ package sopt.org.thirdSeminarAdvancedAssignment.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sopt.org.thirdSeminarAdvancedAssignment.domain.User;
-import sopt.org.thirdSeminarAdvancedAssignment.dto.UserRequestDto;
-import sopt.org.thirdSeminarAdvancedAssignment.dto.UserResponseDto;
+import sopt.org.thirdSeminarAdvancedAssignment.dto.user.UserRequestDto;
+import sopt.org.thirdSeminarAdvancedAssignment.dto.user.UserResponseDto;
 import sopt.org.thirdSeminarAdvancedAssignment.repository.UserRepository;
 
 import javax.transaction.Transactional;
