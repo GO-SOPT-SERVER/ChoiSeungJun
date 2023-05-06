@@ -1,16 +1,17 @@
-package sopt.org.thirdSeminar.domain;
+package sopt.org.fourthSeminar.domain;
 
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import sopt.org.fourthSeminar.AuditingTimeEntity;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class User {
+public class User extends AuditingTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,5 +31,9 @@ public class User {
         this.nickname = nickname;
         this.email = email;
         this.password = password;
+    }
+
+    public static User newInstance(String nickname, String email, String password) {
+        return new User(nickname, email, password);
     }
 }

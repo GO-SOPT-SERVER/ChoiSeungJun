@@ -1,4 +1,4 @@
-package sopt.org.thirdSeminar.controller.exception;
+package sopt.org.fourthSeminar.controller.exception;
 
 import lombok.AccessLevel;
 import lombok.Getter;
