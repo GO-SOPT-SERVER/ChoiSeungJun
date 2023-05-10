@@ -17,16 +17,20 @@ public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
-    @Column
+    @Column(nullable = false)
     private String username;
 
-    @Column
-    private int age;
+    @Column(nullable = false)
+    private String password;
 
-    public static User of(String username, int age) {
+    @Column(nullable = false)
+    private String email;
+
+    public static User of(String username, String password, String email) {
         return User.builder()
                 .username(username)
-                .age(age)
+                .password(password)
+                .email(email)
                 .build();
     }
 

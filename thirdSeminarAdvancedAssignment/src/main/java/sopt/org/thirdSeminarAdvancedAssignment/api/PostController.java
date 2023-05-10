@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import sopt.org.thirdSeminarAdvancedAssignment.dto.post.PostRequestDto;
 import sopt.org.thirdSeminarAdvancedAssignment.dto.post.PostResponseDto;
-import sopt.org.thirdSeminarAdvancedAssignment.exception.ApiResponseDto;
+import sopt.org.thirdSeminarAdvancedAssignment.exception.ApiResponse;
 import sopt.org.thirdSeminarAdvancedAssignment.exception.SuccessStatus;
 import sopt.org.thirdSeminarAdvancedAssignment.service.PostService;
 
@@ -19,13 +19,13 @@ public class PostController {
 
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public ApiResponseDto<PostResponseDto> create(@RequestBody @Valid final PostRequestDto postRequestDto) {
-        return ApiResponseDto.success(SuccessStatus.POST_SUCCESS, postService.addPost(postRequestDto));
+    public ApiResponse<PostResponseDto> create(@RequestBody @Valid final PostRequestDto postRequestDto) {
+        return ApiResponse.success(SuccessStatus.POST_SUCCESS, postService.addPost(postRequestDto));
     }
 
     @GetMapping("/{postId}")
     @ResponseStatus(HttpStatus.OK)
-    public ApiResponseDto<PostResponseDto> findById(@PathVariable @Valid final Long postId) {
-        return ApiResponseDto.success(SuccessStatus.POST_FIND_SUCCESS, postService.findPostById(postId));
+    public ApiResponse<PostResponseDto> findById(@PathVariable @Valid final Long postId) {
+        return ApiResponse.success(SuccessStatus.POST_FIND_SUCCESS, postService.findPostById(postId));
     }
 }
