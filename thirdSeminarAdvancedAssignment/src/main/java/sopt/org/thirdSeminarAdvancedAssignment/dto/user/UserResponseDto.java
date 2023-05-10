@@ -13,13 +13,15 @@ public class UserResponseDto {
 
     private Long userId;
     private String username;
-    private int age;
+    private String password;
+    private String email;
 
-    public static UserResponseDto of(Long userId, String username, int age) {
+    public static UserResponseDto of(Long userId, String username, String password, String email) {
         return UserResponseDto.builder()
                 .userId(userId)
                 .username(username)
-                .age(age)
+                .password(password)
+                .email(email)
                 .build();
     }
 }

@@ -6,8 +6,9 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import sopt.org.thirdSeminarAdvancedAssignment.exception.ApiResponseDto;
-import sopt.org.thirdSeminarAdvancedAssignment.exception.ErrorStatus;
+import sopt.org.thirdSeminarAdvancedAssignment.exception.ApiResponse;
+import sopt.org.thirdSeminarAdvancedAssignment.exception.Error;
+import sopt.org.thirdSeminarAdvancedAssignment.exception.model.ConflictException;
 
 @RestControllerAdvice
 public class ControllerExceptionAdvice {
@@ -17,7 +18,18 @@ public class ControllerExceptionAdvice {
      */
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    protected ApiResponseDto handleMethodArgumentNotValidException(final MethodArgumentNotValidException e) {
-        return ApiResponseDto.error(ErrorStatus.VALIDATION_REQUEST_MISSING_EXCEPTION);
+    protected ApiResponse handleMethodArgumentNotValidException(final MethodArgumentNotValidException e) {
+        return ApiResponse.error(Error.REQUEST_VALIDATION_EXCEPTION);
     }
+
+    /*
+     * 400 CONFLICT
+     */
+    @ResponseStatus(HttpStatus.CONFLICT)
+    @ExceptionHandler()
+    protected ApiResponse handleConflictException(final ConflictException e) {
+        return ApiResponse.error(e.getError());
+    }
+
+
 }

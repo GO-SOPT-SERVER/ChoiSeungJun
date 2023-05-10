@@ -12,20 +12,20 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Getter
 @Builder
-public class Post {
+public class Post extends AuditingTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postId;
 
-    @Column
+    @Column(nullable = false)
     private String title;
 
-    @Column
+    @Column(nullable = false)
     private String content;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "userId", foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
     private User user;
 
     public static Post of(String title, String content, User user) {
