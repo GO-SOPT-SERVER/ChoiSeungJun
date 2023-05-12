@@ -5,6 +5,7 @@ spring:
 # set1
 ---
 spring:
+  profiles: set1
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/sopt_32?useSSL=true&useUnicode=true&serverTimezone=Asia/Seoul
@@ -34,6 +35,7 @@ server:
 ---
 spring:
   datasource:
+    profiles: set2
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/sopt_32?useSSL=true&useUnicode=true&serverTimezone=Asia/Seoul
     username: root
