@@ -15,10 +15,12 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         format_sql: true
+jwt:
+  secret: awhfkawhgkuawhfkaugqkhfaukfjlicjakuwgrku1h2u41y2870w98y@hjkhfahkahfl
 
 logging:
   level:
@@ -56,5 +58,3 @@ logging:
         type:
           descriptor:
             sql: trace
-server:
-  port: 8082

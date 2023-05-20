@@ -12,7 +12,10 @@ public interface UserRepository extends Repository<User, Long> {
 
     // READ
     Optional<User> findByEmail(String email);
+    Optional<User> findById(Long userId);
     boolean existsByEmail(String email);
+
+    Optional<User> findByEmailAndPassword(String email, String password);
 
     // UPDATE
 
