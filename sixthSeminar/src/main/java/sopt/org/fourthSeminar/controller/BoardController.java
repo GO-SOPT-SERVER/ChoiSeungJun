@@ -14,7 +14,7 @@ import sopt.org.fourthSeminar.service.JwtService;
 import javax.validation.Valid;
 
 @RestController
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 @RequestMapping("/board")
 public class BoardController {
 

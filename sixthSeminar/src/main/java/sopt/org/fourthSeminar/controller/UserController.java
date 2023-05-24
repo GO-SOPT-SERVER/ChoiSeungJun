@@ -16,7 +16,7 @@ import sopt.org.fourthSeminar.service.UserService;
 import javax.validation.Valid;
 
 @RestController
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 @RequestMapping("/user")
 public class UserController {
 
