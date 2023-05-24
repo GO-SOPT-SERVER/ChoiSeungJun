@@ -1,5 +1,6 @@
 package sopt.org.fourthSeminar.service;
 
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sopt.org.fourthSeminar.controller.dto.request.BoardRequestDto;
@@ -13,7 +14,7 @@ import sopt.org.fourthSeminar.infrastructure.UserRepository;
 import javax.transaction.Transactional;
 
 @Service
-@RequiredArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 public class BoardService {
 
     private final UserRepository userRepository;

@@ -1,6 +1,7 @@
 package sopt.org.fourthSeminar.controller;
 
 
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +16,7 @@ import sopt.org.fourthSeminar.service.UserService;
 import javax.validation.Valid;
 
 @RestController
-@RequiredArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @RequestMapping("/user")
 public class UserController {
 
