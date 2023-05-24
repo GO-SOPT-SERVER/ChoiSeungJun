@@ -14,10 +14,9 @@ import sopt.org.fourthSeminar.domain.User;
 import sopt.org.fourthSeminar.infrastructure.UserRepository;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserService {
 
     private final UserRepository userRepository;

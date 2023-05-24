@@ -14,7 +14,7 @@ import sopt.org.fourthSeminar.infrastructure.UserRepository;
 import javax.transaction.Transactional;
 
 @Service
-@RequiredArgsConstructor(access = AccessLevel.PRIVATE)
+@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public class BoardService {
 
     private final UserRepository userRepository;
