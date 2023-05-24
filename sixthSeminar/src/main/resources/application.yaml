@@ -8,9 +8,9 @@ spring:
   profiles: set1
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sopt_32?useSSL=true&useUnicode=true&serverTimezone=Asia/Seoul
-    username: root
-    password: 1234
+    url: ${local-url}
+    username: ${local-username}
+    password: ${local-pw}
 
   jpa:
     show-sql: true
@@ -20,7 +20,7 @@ spring:
       hibernate:
         format_sql: true
 jwt:
-  secret: awhfkawhgkuawhfkaugqkhfaukfjlicjakuwgrku1h2u41y2870w98y@hjkhfahkahfl
+  secret: ${jwt-secret}
 
 logging:
   level:
@@ -39,9 +39,9 @@ spring:
   datasource:
     profiles: set2
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/sopt_32?useSSL=true&useUnicode=true&serverTimezone=Asia/Seoul
-    username: root
-    password: 1234
+    url: ${rds-url}
+    username: ${rds-username}
+    password: ${rds-pw}
 
   jpa:
     show-sql: true

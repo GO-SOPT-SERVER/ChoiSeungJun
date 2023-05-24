@@ -1,5 +1,6 @@
 package sopt.org.fourthSeminar.service;
 
+import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import sopt.org.fourthSeminar.controller.dto.request.UserLoginRequestDto;
@@ -13,10 +14,9 @@ import sopt.org.fourthSeminar.domain.User;
 import sopt.org.fourthSeminar.infrastructure.UserRepository;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
+@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
 public class UserService {
 
     private final UserRepository userRepository;
