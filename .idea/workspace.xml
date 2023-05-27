@@ -25,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="subject/1-first_seminar_advanced_assignment" />
+        <entry key="$PROJECT_DIR$" value="SixthSeminar" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,15 +37,15 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/jun/IdeaProjects/ChoiSeungJun",
-    "spring.configuration.checksum": "adebe80eb77beec8327daebfe7f83a8a"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jun/IdeaProjects/ChoiSeungJun&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;adebe80eb77beec8327daebfe7f83a8a&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,6 +57,7 @@
       <workItem from="1681709411413" duration="1666000" />
       <workItem from="1682059455222" duration="47000" />
       <workItem from="1684894271887" duration="332000" />
+      <workItem from="1685165163558" duration="74000" />
     </task>
     <task id="LOCAL-00001" summary="브랜치 분리 후 재커밋 기록을 위해 이전 데이터 reset">
       <created>1681709490794</created>
