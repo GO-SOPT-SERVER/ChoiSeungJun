@@ -1,9 +1,11 @@
 package sopt.org.thirdSeminarAdvancedAssignment.dto.user;
 
-import lombok.*;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
@@ -14,7 +16,7 @@ public class UserRequestDto {
     @Pattern(regexp = "^[가-힣a-zA-Z]{2,10}$", message = "닉네임 형식에 맞지 않습니다.")
     private String username;
 
-    @NotNull
+    @NotBlank
     @Pattern(regexp = "^[a-zA-z0-9]{8,12}$")
     private String password;
 
