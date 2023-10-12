@@ -1,10 +1,10 @@
-package sopt.org.firstSeminar;
+package sopt.org.thirdSeminarAdvancedAssignment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FirstSeminarApplicationTests {
+class ThirdSeminarAdvancedAssignmentApplicationTests {
 
 	@Test
 	void contextLoads() {
