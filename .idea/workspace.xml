@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a83a8c7-5105-4558-a692-e56f23eaa652" name="Changes" comment="2주차 세미나 #2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6a83a8c7-5105-4558-a692-e56f23eaa652" name="Changes" comment="2주차 세미나 #2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="subject/1-first_seminar_advanced_assignment" />
+        <entry key="$PROJECT_DIR$" value="SixthSeminar" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,7 +42,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jun/IdeaProjects/ChoiSeungJun&quot;
+    &quot;last_opened_file_path&quot;: &quot;/Users/jun/IdeaProjects/ChoiSeungJun&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;adebe80eb77beec8327daebfe7f83a8a&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -57,6 +56,8 @@
       <updated>1681709408274</updated>
       <workItem from="1681709411413" duration="1666000" />
       <workItem from="1682059455222" duration="47000" />
+      <workItem from="1684894271887" duration="332000" />
+      <workItem from="1685165163558" duration="74000" />
     </task>
     <task id="LOCAL-00001" summary="브랜치 분리 후 재커밋 기록을 위해 이전 데이터 reset">
       <created>1681709490794</created>

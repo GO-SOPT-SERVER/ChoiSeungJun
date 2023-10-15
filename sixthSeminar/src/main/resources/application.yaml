@@ -1,0 +1,60 @@
+spring:
+  profiles:
+    active: set1
+
+# set1
+---
+spring:
+  profiles: set1
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${local-url}
+    username: ${local-username}
+    password: ${local-pw}
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+jwt:
+  secret: ${jwt-secret}
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
+server:
+  port: 8080
+
+
+# set2
+---
+spring:
+  datasource:
+    profiles: set2
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${rds-url}
+    username: ${rds-username}
+    password: ${rds-pw}
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
